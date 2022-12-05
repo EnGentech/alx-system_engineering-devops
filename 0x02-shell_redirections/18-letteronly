@@ -1,0 +1,2 @@
+#!/bin/bash
+grip -i "^[a-z] /etc/ssh/ssh_config
