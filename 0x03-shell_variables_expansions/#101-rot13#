@@ -1,2 +1,0 @@
-#!/bin/bash
-tr echo {a..z} | tr "[a-z]" "[m-za-l]"
