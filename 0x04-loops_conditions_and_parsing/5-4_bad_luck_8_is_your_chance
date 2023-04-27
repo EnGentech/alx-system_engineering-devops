@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# consider chineese culture
+
+tim=0
+while [ $tim -lt 10 ]
+do
+    if [ $tim -eq 3 ]
+    then
+        echo "bad luck"
+    elif [ $tim -eq 7 ]
+    then
+        echo "good luck"
+    else
+        echo "Best School"
+    fi
+    tim=$(( tim + 1 ))
+
+done
