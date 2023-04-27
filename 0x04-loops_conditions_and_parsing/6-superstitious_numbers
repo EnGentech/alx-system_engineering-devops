@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# conditional printing of one to twenty
+
+numb=1
+while [ $numb -le 20 ];
+do
+    echo "$numb"
+    case $numb in
+    4)
+    echo "bad luck from China"
+    ;;
+    9)
+    echo "bad luck from Japan"
+    ;;
+    17)
+    echo "bad luck from Italy"
+
+    esac
+
+    numb=$((numb + 1))
+done
