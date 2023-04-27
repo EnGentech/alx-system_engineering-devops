@@ -4,5 +4,5 @@ itr=1
 while [ $itr -le 10 ];
 do
     echo "Best School"
-    itr=$(($itr+1))
+    itr=$((itr+1))
 done
