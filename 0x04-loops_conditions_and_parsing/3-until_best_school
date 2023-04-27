@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Looping with until
+
+itr=0
+until [ $itr -eq 10 ];
+do
+    echo "Best School"
+    itr=$((itr+1))
+done
