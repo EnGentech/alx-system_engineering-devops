@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# clock for hours and min
+# 24hours and 60mins code
+
+hour=0
+
+while [ $hour -le 12 ];
+do
+    echo "Hour: $hour"
+    min=1
+    while [ $min -le 59 ];
+    do
+        echo "$min"
+        
+        if [ $min -eq 59 ] && [ $hour -ne 12 ];
+        then
+            hour=$((hour + 1))
+            echo "Hour: $hour"
+            min=0
+        fi
+        min=$((min + 1))
+    done
+    hour=$((hour + 1))
+done
