@@ -3,9 +3,9 @@
 
 if [ -a school ];
 then
-    echo "school file exist"
+    echo "school file exists"
 else
-    echo "school file does not exits"
+    echo "school file does not exit"
 fi
 if [ ! -s school ];
 then
