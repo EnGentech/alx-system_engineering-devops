@@ -2,4 +2,4 @@
 # Kill the running process of 7-highlander
 
 kil_hlander=$(pgrep -f 7-highlander)
-kill "$kil_hlander"
+kill -TERM "$kil_hlander"
