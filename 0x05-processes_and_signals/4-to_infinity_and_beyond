@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Infinite looping
+
+con=0
+while [ $con -lt 10 ];
+do
+    echo "To infinity and beyond"
+done
