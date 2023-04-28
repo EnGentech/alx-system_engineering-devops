@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Kill the running process of 7-highlander
 
-kil_hlander=$(pgrep -f 7-highlander)
-kill -TERM "$kil_hlander"
+kil_hlander=$(pgrep -f ./7-highlander)
+kill -KILL "$kil_hlander"
