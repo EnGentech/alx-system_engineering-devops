@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # A code to display a list of process
 
-ps aux
+ps auxf
