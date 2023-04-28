@@ -2,4 +2,4 @@
 # kill running process with equivalent kill
 # i.e pkill
 
-pkill ./4-to_infinity_and_beyond
+pkill -f ./4-to_infinity_and_beyond
