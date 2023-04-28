@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Trap SIGTERM while running
 
-trap 'echo "I am invincible !!!"; exit 0' SIGTERM
+trap 'echo "I am invincible !!!"' SIGTERM
 
 while true
 do
