@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# A program to print processes with grep bash
+# shellcheck disable=SC2009
+
+ps auxf | grep bash
