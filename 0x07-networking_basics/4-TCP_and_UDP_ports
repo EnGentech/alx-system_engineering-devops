@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# display a listing of net values
+
+netstat -pl
