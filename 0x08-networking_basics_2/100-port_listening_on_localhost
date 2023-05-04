@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#listing with 98 localhost
+
+while true; do
+  nc -l localhost 98
+done

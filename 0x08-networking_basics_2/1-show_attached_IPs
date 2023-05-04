@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Bash program to print all ipv4 addresses from inet
+
+ifconfig | grep 'inet ' | awk '{print $2}'
