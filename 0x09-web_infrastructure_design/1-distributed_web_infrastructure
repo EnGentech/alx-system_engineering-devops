@@ -1,3 +1,6 @@
+https://imgur.com/a/GVaq1Lm
+The above is the link to the image
+
 Every additional element in the web infrastructure is needed for redundancy, this is to enhance the avalability of resources when theres a break down of any server infrastructure
 
 The algorithm of the load balancer in this sence uses a round-robin technique. The load balancer distributes incoming traffic across multiple servers, ensuring efficient unilization fo resources and high availability. 
