@@ -1,0 +1,3 @@
+Every additional element in the web infrastructure is needed for redundancy, this is to enhance the avalability of resources when theres a break down of any server infrastructure
+
+The algorithm of the load balancer in this sence uses a round-robin technicque 
