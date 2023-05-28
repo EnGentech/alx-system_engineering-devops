@@ -1,0 +1,17 @@
+What is Server:Server are high powered high end systems basically dedicated to store, process and manage nework data and resources which will be made accessible to the globe. Servers are engines that powers organizational network devices and systems with adequate resources.  
+
+Role of the domain Name: The domain name is a unique string of text that is used in identifying a specific resouce on the internet. It enables human readable and remembrance by converting the numeric IP address into a more comprehensive human readable strings. Basically, the foorbar.com is a DNS representing 8.8.8.8 as seen in the diagram in one-server.png file.
+
+The web server in this context manages the http file request, it transmits the html file from the server to the user end browser. it bascally handles the HTTP protocol which is majorly seen as a web static. 
+
+Application server: It makes the webpage request dynamic by presenting to the user the desire at which the request was made. 
+
+Database: This is a storage engine that stores files in a relational table which helps in associating user request to its appropriate content in the database. It also create authentication and query option.
+
+The server uses HTTP protocol to communicate with the users requesting the website
+
+SPOF: Single Point Of Failure is inevitable in this infrastructure as the server has no redundancy implying that if any of the web infrastructure has an issue, the entire system may likely fail as the server has no backup
+
+Downtime: Downtime when maintenance is needed in this aspect is inefficient because the system will need to be put in hold as the system must be put to a halt hence to update or maintain what is needful within the server.
+
+Incoming taffic: In this case, if the server encounter lots of request, the server might experience dead lock as the system will be experiencing lots of pressure called request.
