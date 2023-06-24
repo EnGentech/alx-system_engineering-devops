@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
+#This script connect user to server at certain ip address
 
 ssh -i ~/.ssh/school ubuntu@54.165.170.106
