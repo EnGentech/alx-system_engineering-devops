@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#Login to the server without authentication
+
+Host 54.165.170.106
+    IdentifyFile ~/.ssh/school
+    PreferredAuthentications publickey
+    PasswordAuthentication no
