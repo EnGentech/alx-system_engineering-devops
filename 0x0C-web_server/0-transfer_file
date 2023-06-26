@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # Send to the server from client
 
 if [ $# -lt 3 ]; then
