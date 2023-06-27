@@ -11,4 +11,4 @@ S_IP="$2"
 U_name="$3"
 ssh_key="$4"
 
-scp -o StrictHostKeyChecking=no -i "$ssh_key" "$fp" "$U_name@$S_IP"
+scp -o StrictHostKeyChecking=no -i "$ssh_key" "$fp" "$U_name@$S_IP:~/"
