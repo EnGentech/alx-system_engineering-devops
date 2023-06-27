@@ -1,11 +1,30 @@
-#!/usr/bin/env bash
-# The redirection must be a “301 Moved Permanently”
+#!/bin/bash
 
-sudo apt-get -y install nginx
-sudo bash -c 'echo "Hello World!" > /var/www/html/index.nginx-debian.html'
+# Install Nginx web server if not already installed
+if ! command -v nginx &> /dev/null; then
+    apt update
+    apt install -y nginx
+fi
 
-redirect="\n\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n"
+# Create a configuration file for the redirection
+cat > /etc/nginx/conf.d/redirect.conf <<EOF
+server {
+    listen 80;
+    server_name your_domain.com;
 
-sudo sed -i "53s|.*|$redirect|" /etc/nginx/sites-enabled/default
+    location /redirect_me {
+        return 301 https://www.example.com/new_page;
+    }
 
-sudo /etc/init.d/nginx restart
+    location / {
+        # Your existing Nginx configuration goes here
+        # ...
+    }
+}
+EOF
+
+# Test the Nginx configuration
+nginx -t
+
+# Restart Nginx to apply the changes
+sudo service nginx restart
