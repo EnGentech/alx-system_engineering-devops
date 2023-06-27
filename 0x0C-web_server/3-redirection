@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 
 # Install Nginx
-sudo apt update
-sudo apt install -y nginx
+apt-get -y update
+apt-get -y install nginx
 
-# Configure the redirection in Nginx default configuration
-sed -i '/server_name _;/a \ \n\tlocation \/redirect_me {\n\t\treturn 301 http:\/\/newpage.com;\n\t}\n' /etc/nginx/sites-available/default
+# running hello
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
 
-# Restart Nginx to apply the changes
-sudo service nginx restart
+# creating a redirecting file 
+sed -i "s/server_name _;/server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/AyBims permanent;/" /etc/nginx/sites-available/default
+
+# start service
+service nginx start
