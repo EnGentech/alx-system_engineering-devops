@@ -1,13 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Install Nginx web server if not already installed
-if ! command -v nginx &> /dev/null; then
-    apt update
-    apt install -y nginx
-fi
+sudo apt update
+sudo apt -y install nginx
+sudo service nginx start
 
 # Create a configuration file for the redirection
-cat > /etc/nginx/conf.d/redirect.conf <<EOF
+cat > /etc/nginx/site-available/default <<EOF
 server {
     listen 80;
     server_name engentech.tech;
@@ -16,15 +14,6 @@ server {
         return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
     }
 
-    location / {
-        # Your existing Nginx configuration goes here
-        # ...
-    }
 }
 EOF
-
-# Test the Nginx configuration
-nginx -t
-
-# Restart Nginx to apply the changes
 sudo service nginx restart
