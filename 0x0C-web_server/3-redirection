@@ -1,19 +1,16 @@
 #!/usr/bin/env bash
 
-sudo apt update
-sudo apt -y install nginx
+#!/usr/bin/env bash
+# Configure a new Nginx server so that /redirect_me is redirecting to another page.
+# The redirection must be a “301 Moved Permanently”
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
 sudo service nginx start
-
-# Create a configuration file for the redirection
-cat > /etc/nginx/site-available/default <<EOF
-server {
-    listen 80;
-    server_name engentech.tech;
-
-    location /redirect_me {
-        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
-    }
-
-}
-EOF
+new_string="\\\trewrite ^/redirect_me hhttps://www.youtube.com/watch?v=MjoP9GWgxe0&t=1592s permanent;"
+sudo sed -i "19i $new_string" /etc/nginx/sites-available/default
 sudo service nginx restart
+sudo service nginx reload
+sudo apt update
+
+sudo service nginx start
