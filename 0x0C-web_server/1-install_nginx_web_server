@@ -1,25 +1,21 @@
 #!/usr/bin/env bash
+# Install Ubuntu webserver on server and set helloworld
 
-# Update the package index
-sudo apt update
+sudo apt-get update -y -qq && \
+	 sudo apt-get install nginx -y
 
-# Install Nginx
-sudo apt install -y nginx
+sudo service nginx start # lunch the service
 
-# Configure Nginx
-sudo tee /etc/nginx/sites-available/default > /dev/null <<EOF
-server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
+sudo ufw allow 'Nginx HTTP' # allow this protocol
 
-    root /var/www/html;
-    index index.html;
+sudo chown -R "$USER":"$USER" /var/www/html
+sudo chmod -R 755 /var/www
 
-    location / {
-        return 200 "Hello World!";
-    }
-}
-EOF
+cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.bckp
 
-# Restart Nginx
+echo -e "Hello World!" | dd status=none of=/var/www/html/index.nginx-debian.html
+
+# Restarting nginx
 sudo service nginx restart
+
+echo -e "\nCompleted. ✅\n"
