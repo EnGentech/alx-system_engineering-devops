@@ -10,10 +10,10 @@ fi
 cat > /etc/nginx/conf.d/redirect.conf <<EOF
 server {
     listen 80;
-    server_name your_domain.com;
+    server_name engentech.tech;
 
     location /redirect_me {
-        return 301 https://www.example.com/new_page;
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
     }
 
     location / {
