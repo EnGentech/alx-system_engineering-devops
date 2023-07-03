@@ -9,11 +9,20 @@ sudo add-apt-repository ppa:vbernat/haproxy-2.0
 sudo apt-get -y install haproxy=2.0.\*
 
 sudo chmod 777 /etc/haproxy/haproxy.cfg
+sudo chmod 777 /etc/default/haproxy
 
-printf "backend web-backend
+echo 'ENABLED=1' >> /etc/default/haproxy
+
+printf "frontend engen
+    bind *:80
+    mode http
+    default_backend myTech
+
+backend myTech
     balance roundrobin
-    server 202551-web-01 engentech.tech:80 check
+    server 202551-web-01 54.174.21.244:80 check
     server 202551-web-02 100.25.129.237:80 check
     " >> /etc/haproxy/haproxy.cfg
 
+sudo service haproxy start
 sudo service haproxy restart
