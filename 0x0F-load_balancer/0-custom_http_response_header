@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# Configuring the second server for load balancing
+
+sudo apt update
+sudo apt upgrade -y
+sudo apt -y install nginx
+
+sudo service nginx start
+sudo chmod -R 777 /var/www
+sudo chmod -R 777 /etc/nginx/sites-enabled/default
+
+cp /var/www/html/index.html /var/www/html/back_up
+echo "Hello World!" > /var/www/html/index.html
+
+printf "server {\n
+    listen 80 default_server;
+    listen [::]:80 default_server ipv6only=on;
+
+    root /var/www/html;
+    index index.html index.htm index.nginx-debian.html;
+    
+    add_header X-Served-By $HOSTNAME;
+    server_name _;
+
+    location /redirect_me {
+
+        try_files $uri $uri/ =404;
+    }
+}" > /etc/nginx/sites-enabled/default
+
+sudo service nginx restart
