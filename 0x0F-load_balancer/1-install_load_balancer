@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Installing HPproxy as load balancer
+
+sudo apt update
+sudo apt upgrade
+
+sudo apt-get install --no-install-recommends software-properties-common
+sudo add-apt-repository ppa:vbernat/haproxy-2.0
+sudo apt-get -y install haproxy=2.0.\*
+
+sudo chmod 777 /etc/haproxy/haproxy.cfg
+
+printf "backend web-backend
+    balance roundrobin
+    server 202551-web-01 engentech.tech:80 check
+    server 202551-web-02 100.25.129.237:80 check
+    " >> /etc/haproxy/haproxy.cfg
+
+sudo service haproxy restart
