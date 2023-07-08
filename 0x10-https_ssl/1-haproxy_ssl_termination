@@ -1,0 +1,9 @@
+frontend www-https
+    bind *:443 ssl crt /etc/letsencrypt/live/www.zavix.tech/fullchain.pem
+    mode http
+    default_backend web-backend
+
+backend web-backend
+    mode http
+    balance roundrobin
+    server web1 52.91.127.148:80 check
