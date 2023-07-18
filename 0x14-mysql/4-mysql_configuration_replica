@@ -1,0 +1,116 @@
+ubuntu@202551-web-02:~$ login
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 31
+Server version: 5.7.42 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show grants for 'holberton_user'@'localhost';
++-------------------------------------------------------------------------+| Grants for holberton_user@localhost                                     |+-------------------------------------------------------------------------+| GRANT SELECT, REPLICATION CLIENT ON *.* TO 'holberton_user'@'localhost' |+-------------------------------------------------------------------------+1 row in set (0.00 sec)
+
+mysql> exit
+Bye
+ubuntu@202551-web-02:~$ cd /etc/mysql/
+ubuntu@202551-web-02:/etc/mysql$ ls
+conf.d  my.cnf  my.cnf.fallback  mysql.cnf  mysql.conf.d
+ubuntu@202551-web-02:/etc/mysql$ cd mysql.conf.d/
+ubuntu@202551-web-02:/etc/mysql/mysql.conf.d$ vi mysqld.cnf 
+ubuntu@202551-web-02:/etc/mysql/mysql.conf.d$ chmod 777 mysqld.cnf 
+chmod: changing permissions of 'mysqld.cnf': Operation not permitted
+ubuntu@202551-web-02:/etc/mysql/mysql.conf.d$ sudo chmod 777 mysqld.cnf 
+ubuntu@202551-web-02:/etc/mysql/mysql.conf.d$ vi mysqld.cnf 
+ubuntu@202551-web-02:/etc/mysql/mysql.conf.d$ sudo service mysql restart
+ubuntu@202551-web-02:/etc/mysql/mysql.conf.d$ exit
+logout
+Connection to 34.207.58.138 closed.
+root@dd11b46fa566:/alx-system_engineering-devops/0x14-mysql# server2
+Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.15.0-1039-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue Jul 18 20:31:17 UTC 2023
+
+  System load:  0.15               Processes:             109
+  Usage of /:   14.6% of 19.20GB   Users logged in:       1
+  Memory usage: 42%                IPv4 address for eth0: 10.247.218.224
+  Swap usage:   0%
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+3 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+New release '22.04.2 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Tue Jul 18 19:54:07 2023 from 54.144.114.79
+ubuntu@202551-web-02:~$ vi mysqld.cnf 
+ubuntu@202551-web-02:~$ vi /etc/mysql/my
+my.cnf           my.cnf.fallback  mysql.cnf        mysql.conf.d/
+ubuntu@202551-web-02:~$ cd /etc/mysql/
+ubuntu@202551-web-02:/etc/mysql$ ls
+conf.d  my.cnf  my.cnf.fallback  mysql.cnf  mysql.conf.d
+ubuntu@202551-web-02:/etc/mysql$ cd mysql.conf.d/
+ubuntu@202551-web-02:/etc/mysql/mysql.conf.d$ ls
+mysqld.cnf
+ubuntu@202551-web-02:/etc/mysql/mysql.conf.d$ cat mysqld.cnf 
+# Copyright (c) 2014, 2023, Oracle and/or its affiliates.
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License, version 2.0,
+# as published by the Free Software Foundation.
+#
+# This program is also distributed with certain software (including
+# but not limited to OpenSSL) that is licensed under separate terms,
+# as designated in a particular file or component or in included license
+# documentation.  The authors of MySQL hereby grant you an additional
+# permission to link the program and your derivative works with the
+# separately licensed software that they have included with MySQL.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License, version 2.0, for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+#
+# The MySQL  Server configuration file.
+#
+# For explanations see
+# http://dev.mysql.com/doc/mysql/en/server-system-variables.html
+
+[mysqld]
+pid-file        = /var/run/mysqld/mysqld.pid
+socket          = /var/run/mysqld/mysqld.sock
+datadir         = /var/lib/mysql
+log-error       = /var/log/mysql/error.log
+server-id = 2
+lob_bin = /var/log/mysql/mysql-bin.log
+relay-log = /var/log/mysql/mysql-relay-bin.log
+log_slave_updates = 1
+read_only = 1
+# By default we only accept connections from localhost
+# bind-address  = 127.0.0.1
+# Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+ubuntu@202551-web-02:/etc/mysql/mysql.conf.d$ 
