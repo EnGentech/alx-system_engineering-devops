@@ -9,7 +9,7 @@ if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/todos"
     url2 = "https://jsonplaceholder.typicode.com/users"
 
-    id = argv[1]
+    id = int(argv[1])
 
     todos = requests.get(url).json()
     users = requests.get(url2).json()
