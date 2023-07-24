@@ -4,7 +4,7 @@
 import requests
 from sys import argv
 
-id = argv[1]
+id = int(argv[1])
 
 url = "https://jsonplaceholder.typicode.com/todos"
 url2 = "https://jsonplaceholder.typicode.com/users"
