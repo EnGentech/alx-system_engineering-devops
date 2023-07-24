@@ -25,7 +25,7 @@ if __name__ == "__main__":
 
     for name in user:
         if name['id'] == id:
-            print("Employee {} is done with tasks ({}/{})"
+            print("Employee {} is done with tasks ({}/{}):"
                   .format(name['name'], count, task))
 
     for x in lst:
