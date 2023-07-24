@@ -29,6 +29,6 @@ if __name__ == "__main__":
                   .format(name['name'], count, task))
 
     for x in lst:
-        print("\t{}".format(x))
+        print("\t {}".format(x))
 
 # Coded by EnGentech
