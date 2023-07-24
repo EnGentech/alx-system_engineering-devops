@@ -1,8 +1,6 @@
 #!/usr/bin/python3
-"""
-The beginning of API
-Shea you guys need documentation, then lets document
-"""
+"""This script returns to-do list information for a given employee ID."""
+
 
 import requests
 from sys import argv
