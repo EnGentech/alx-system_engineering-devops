@@ -21,15 +21,9 @@ if __name__ == "__main__":
 
         with open("{}.csv".format(id), "w", newline="") as csvfile:
             writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
-            [writer.writerow(
-                [id, name, t.get("completed"), t.get("title")]
-            ) for t in todos]
-
-    # with open("{}.csv".format(id), 'w') as f:
-    #     writer = csv.writer(f, quoting=csv.QUOTE_ALL)
-    #     for todo in todos:
-    #         if todo['userId'] == id:
-    #             val = [id, name, todo["completed"], todo["title"]]
-    #             writer.writerow([val])
+            for todo in todos:
+                if todo['userId'] == id:
+                    writer.writerow(
+                        [id, name, todo.get("completed"), todo.get("title")])
 
 # Coded by EnGentech
