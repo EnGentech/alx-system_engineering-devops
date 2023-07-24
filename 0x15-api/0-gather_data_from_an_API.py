@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""The beginning of API"""
+"""
+The beginning of API
+Shea you guys need documentation, then lets document
+"""
 
 import requests
 from sys import argv
