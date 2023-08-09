@@ -12,8 +12,7 @@ def recurse(subreddit, hot_list=[], after=""):
     for the above state parameters"""
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     req = requests.get(url, headers={"User-Agent": "2-recurse/1.0"},
-        params={"after": after}
-    )
+                       params={"after": after})
 
     if req.status_code == 200:
         for con in req.json().get("data").get("children"):
