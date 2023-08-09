@@ -13,7 +13,7 @@ def top_ten(subreddit):
     if con.status_code == 200:
         data = con.json()
         subs = data['data']['children']
-        
+
         for post in post[:10]:
             title_content = post['data']['title']
             print(title_content)
